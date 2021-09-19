@@ -6,7 +6,9 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'https://unpkg.com/@picocss/pico@latest/css/pico.min.css', media: 'all', 'data-turbo-track': 'reload' %>
+    <% if content_for?(:bar) %>
+      <%= yield(:bar) %>
+    <% end %>
     <%= javascript_importmap_tags %>
   </head>
 
